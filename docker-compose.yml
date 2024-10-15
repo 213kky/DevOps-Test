@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  server:
+    environment:
+      mysql_url: ${mysql_url}
+      mysql_username: ${mysql_username}
+      mysql_password: ${mysql_password}
+    build: .
+    stdin_open: true          # -i 옵션과 동일
+    tty: true                 # -t 옵션과 동일
+    container_name: server
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./logs:/logs  # 로그 파일을 저장할 볼륨 추가
