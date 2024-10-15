@@ -1,6 +1,4 @@
 spring:
-  profiles:
-    include: db
   datasource:
     url: ${mysql.url}  # 데이터베이스 URL
     username: ${mysql.username}                          # 사용자명
